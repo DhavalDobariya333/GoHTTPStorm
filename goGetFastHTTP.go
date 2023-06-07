@@ -1,5 +1,5 @@
 //  gopost with fathttp   gpt
-
+//get without body
 package main
 
 import (
