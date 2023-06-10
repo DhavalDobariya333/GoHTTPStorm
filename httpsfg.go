@@ -52,7 +52,7 @@ func downloadAll(urls []string, client *fasthttp.Client, wg *sync.WaitGroup, suc
 }
 
 func main() {
-	urlList := make([]string, 9999)
+	urlList := make([]string, 99999)
 	for i := range urlList {
 		urlList[i] = "https://stackoverflow.com/admin.php?DDD-hack-the-stack" // Replace with your actual URL
 	}
