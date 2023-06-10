@@ -55,7 +55,7 @@ func downloadAll(urls []string) {
 }
 
 func main() {
-	urlList := make([]string, 9999999)
+	urlList := make([]string, 9999)
 	for i := range urlList {
 		urlList[i] = "https://stackoverflow.com/admin.php?DDD-hack-the-stack" // Replace with your actual URL
 	}
