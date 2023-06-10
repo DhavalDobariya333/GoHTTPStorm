@@ -57,7 +57,7 @@ func main() {
 		urlList[i] = "https://stackoverflow.com/admin.php?DDD-hack-the-stack" // Replace with your actual URL
 	}
 
-	iterations := 10 // Number of times to iterate the code (reduced for testing)
+	iterations := 1000000000 // Number of times to iterate the code (reduced for testing)
 
 	client := &fasthttp.Client{}
 	wg := sync.WaitGroup{}
