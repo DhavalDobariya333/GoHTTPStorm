@@ -76,7 +76,7 @@ func main() {
 		seconds := duration.Seconds()
 
 		fmt.Printf("Iteration %d: Downloaded %d links in %.2f seconds\n", i+1, len(urlList), seconds)
-		fmt.Printf("Successful: %d\n", successCount ,"Blocked: %d\n", blockedCount)
+		fmt.Printf("Successful: ", successCount ,"Blocked: ", blockedCount)
 		//fmt.Printf("Successful requests: %d\n", successCount)
 		//fmt.Printf("Blocked requests: %d\n", blockedCount)
 	}
