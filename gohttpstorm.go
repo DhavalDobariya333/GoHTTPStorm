@@ -3,15 +3,12 @@
 //Remove the unnecessary delay: If you no longer require the delay between requests, you can remove the time.Sleep(delay) statement within the goroutine. This will allow the goroutines to proceed without any artificial delay.
 
 
-
-
 package main
 
 import (
 	"fmt"
 	"sync"
 	"time"
-
 	"github.com/valyala/fasthttp"
 )
 
@@ -33,7 +30,6 @@ func downloadLink(url string, wg *sync.WaitGroup, client *fasthttp.Client) {
 
 	// Handle the response here
 	// ...
-
 	// fmt.Printf("Downloaded %s\n", url)
 }
 
