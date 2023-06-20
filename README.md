@@ -1,4 +1,4 @@
-# 🚀 GoHTTPStorm
+# ⚡️ GoHTTPStorm
 
 ```
 ./gohttpstorm.sh
